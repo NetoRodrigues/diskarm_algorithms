@@ -1,9 +1,6 @@
-# Disk range: 0-39
 # Initial request positions: 1, 9, 12, 16, 34, 36
 import random
-
-MIN_POSITION = 0
-MAX_POSITION = 39
+from settings import MIN_POSITION, MAX_POSITION
 
 
 class Disk:
@@ -19,3 +16,6 @@ class Disk:
 
     def fulfill_request(self, request_position):
         self.REQUESTS.remove(request_position)
+
+    def has_no_requests(self):
+        return not self.REQUESTS
