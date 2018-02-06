@@ -1,20 +1,20 @@
 from Disk import Disk
 from DiskArm import DiskArm
+import settings
 
 disk = Disk()
-disk_arm = DiskArm()
-
+#disk_arm = DiskArm(settings.SSTF)
+#disk_arm = DiskArm(settings.LOOK)
+#disk_arm = DiskArm(settings.CLOOK)
+disk_arm = DiskArm(settings.CSCAN)
 
 def run():
     print("Disk created!")
     print("Initial request positions: {} ".format(disk.REQUESTS))
 
     while True:
-        disk_arm.move_SSTF( disk.REQUESTS )
-        #disk_arm.move_CSCAN( disk.REQUESTS )
-        #disk_arm.move_LOOK( disk.REQUESTS )
-        #disk_arm.move_CLOOK( disk.REQUESTS )
-
+        disk_arm.move( disk.REQUESTS )
+        
         if disk_arm.position in disk.REQUESTS:
             disk.fulfill_request(disk_arm.position)
             print("Request {} fulfilled!".format(disk_arm.position))
