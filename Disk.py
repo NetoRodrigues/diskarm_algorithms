@@ -6,7 +6,7 @@ from settings import MIN_POSITION, MAX_POSITION
 class Disk:
 
     def __init__(self):
-        random.seed(1)
+        #random.seed(1)
         self.REQUESTS = [1, 9, 12, 16, 34, 36]
 
     def create_request(self):
