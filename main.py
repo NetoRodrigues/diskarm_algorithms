@@ -10,9 +10,10 @@ def run():
     print("Initial request positions: {} ".format(disk.REQUESTS))
 
     while True:
-        #disk_arm.move_SSTF( disk.REQUESTS )
+        disk_arm.move_SSTF( disk.REQUESTS )
         #disk_arm.move_CSCAN( disk.REQUESTS )
-        disk_arm.move_SCAN( disk.REQUESTS )
+        #disk_arm.move_LOOK( disk.REQUESTS )
+        #disk_arm.move_CLOOK( disk.REQUESTS )
 
         if disk_arm.position in disk.REQUESTS:
             disk.fulfill_request(disk_arm.position)
